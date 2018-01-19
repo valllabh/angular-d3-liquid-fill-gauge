@@ -1,0 +1,20 @@
+{
+  "name": "angular-d3-liquid-fill-gauge",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/valllabh/angular-d3-liquid-fill-gauge",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.8",
+    "d3": "^4.12.2",
+    "jQuery": "^3.2.1",
+    "d3-ease": "^1.0.3"
+  }
+}
