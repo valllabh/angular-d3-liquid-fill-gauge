@@ -20,6 +20,9 @@
         height: 200px;
         display: inline-block;
       }
+      .col {
+        display: inline-block;
+      }
     </style>
 
     <script type="text/javascript">
@@ -54,14 +57,34 @@
             waveTextColor: "#66BB6A"
           }
         };
+
+        $scope.refreshValues = function(){
+          var random = function(){ return Math.floor(Math.random() * Math.floor(100)); }
+          $scope.gauge1.value = random();
+          $scope.gauge2.value = random();
+          $scope.gauge3.value = random();
+        }
+
       }])
     </script>
   </head>
   <body ng-app="App">
     <div ng-controller="AnyStandardController">
-      <div class="liquid-fill-gauge" ng-model="gauge1.value" config="gauge1.config"></div>
-      <div class="liquid-fill-gauge" ng-model="gauge2.value" config="gauge2.config"></div>
-      <div class="liquid-fill-gauge" ng-model="gauge3.value" config="gauge3.config"></div>
+      <div class="col">
+        <div class="liquid-fill-gauge" ng-model="gauge1.value" config="gauge1.config"></div>
+      </div>
+
+      <div class="col">
+        <div class="liquid-fill-gauge" ng-model="gauge2.value" config="gauge2.config"></div>
+      </div>
+
+      <div class="col">
+        <div class="liquid-fill-gauge" ng-model="gauge3.value" config="gauge3.config"></div>
+      </div>
+
+      <div>
+        <button type="button" name="button" ng-click="refreshValues()">Refresh</button>
+      </div>
     </div>
   </body>
 </html>

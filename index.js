@@ -45,7 +45,7 @@ angular.module('D3LiquidFillGauge', [])
 
       function refresh(){
         s.config = angular.extend(defaultConfig, s.config);
-        visual = loadLiquidFillGauge(s.uuid, 0, s.config);
+        visual = visual || loadLiquidFillGauge(s.uuid, 0, s.config);
         update();
       }
 
@@ -246,11 +246,11 @@ angular.module('D3LiquidFillGauge', [])
 
                   var textTween = function(){
                     var this_text = this;
-                      var i = d3.interpolate(this.textContent, parseFloat(value).toFixed(2));
-                      return function(t) {
-                        this.textContent = textRounderUpdater(i(t)) + percentText;
-                        d3.select(this_text).text(this.textContent);
-                      }
+                    var i = d3.interpolate(this.textContent, parseFloat(value).toFixed(2));
+                    return function(t) {
+                      this.textContent = textRounderUpdater(i(t)) + percentText;
+                      d3.select(this_text).text(this.textContent);
+                    }
                   };
 
                   text1.transition()

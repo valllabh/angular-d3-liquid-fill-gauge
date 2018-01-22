@@ -1,4 +1,4 @@
 # angular-d3-liquid-fill-gauge
 angular-d3-liquid-fill-gauge
 
-`bower install`
+`bower install valllabh/angular-d3-liquid-fill-gauge`
